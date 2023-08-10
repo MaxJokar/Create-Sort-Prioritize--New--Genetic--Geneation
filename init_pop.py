@@ -9,8 +9,6 @@ pop = 4
 # each have 4 Choromosome
 n = 4 
 
-# Produce a population with their own accident Chromosome numbers
-# [2, 4, 1, 3], [2, 3, 3, 1], [3, 3, 4, 4]...
 
 def init_pop(pop,n):
     """ we produce a initial population with their accident chromosome  for each person"""
@@ -32,15 +30,8 @@ def init_pop(pop,n):
 #================================CROSS OVER===============
 #  we mix first 2 accident chromosome for   each person with another one as one  couple 
     print("="*50)
-# TEST:
-# To slice list 2 LAST  elements:
-# print(population[0][2:]) OR
+
     print("-CROSS OVER...")
-# print(population[0][len(population[0])//2:])
-# [1, 2, 0]
-# To slice 2 FIRST elements
-# print(population[0][:len(population[0])//2])
-# [1, 2]    
 
 
     for i in range(0,len(pop_list), 2):
@@ -52,11 +43,5 @@ def init_pop(pop,n):
         print("="*50)
 
 
-
-
-# Driver code to test above method
-# population = init_pop(pop, n )
-# print("Population is :" , population)
-# print()
-
+# Driver code
 init_pop(pop, n )
