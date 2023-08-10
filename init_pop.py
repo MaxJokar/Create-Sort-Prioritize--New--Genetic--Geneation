@@ -84,14 +84,43 @@ def init_pop(pop,n):
         new_element = 1
         choosen_ones[new_element],choosen_ones[i] = choosen_ones[i] ,choosen_ones[new_element]
     # print("choosen ones are  :" , choosen_ones)
+    choosen_ones = choosen_ones[:int(len(choosen_ones)*m_r)]
     
     for i in choosen_ones:
         new_ch = rnd.randint(0,n-1)
         # new_value = rnd.randint(1,n)
         new_value = 5
         pop_list[i][new_ch] = new_value
+        if pop_list[0][n] == 0:
+            print("best Future Children  , " , pop_list[0][0:n])
     print(pop_list) 
 
+# 4. choose the best child (a child having all attribute is the best option , here is the condition )
+    i = 0
+    length = len(pop_list)
+    conflict = 0 
+    while i < length:
+        j = 0 
+        conflict = 0 
+        while j < n:
+            l = j +1
+            while l<n:
+                if pop_list[i][j] == pop_list[i][l]:
+                    conflict+=1
+                if abs(j-l) ==abs(pop_list[i][j] - pop_list[i][l]): 
+                    conflict+=1
+                l+=1
+            j+=l
+        pop_list[i][len(pop_list[j])-1] = conflict
+        i+=1
+          
+    for i in range(len(pop_list)):
+        _min = i
+        for j in range(i, len(pop_list)):
+            if pop_list[j][n] < pop_list[_min][n]:
+                _min = j
+        pop_list, pop_list[_min] = pop_list[_min] , pop_list[i]   
+    print("this is the best child " , pop_list)
 
 
 
@@ -102,4 +131,13 @@ def init_pop(pop,n):
 
 
 
+
+
+
+
+
+# Driver code to test above method
 init_pop(pop, n )
+
+
+
