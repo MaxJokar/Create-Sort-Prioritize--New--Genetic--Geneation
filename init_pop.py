@@ -68,8 +68,6 @@ def init_pop(pop,n):
 # ==================================================
 # child1 [2, 3, 1, 1, 0]
 # child2 [3, 2, 3, 2, 0]      
-        
-        
 
     print("Total amount of people is : ",pop_list)
 # Total amount of people is :  [[2, 2, 4, 4, 0], [2, 2, 1, 4, 0], [2, 3, 3, 2, 0], [3, 2, 1, 1, 0], [2, 2, 1, 4, 0], [2, 2, 4, 4, 0], [2, 3, 1, 1, 0], [3, 2, 3, 2, 0]]
@@ -78,8 +76,7 @@ def init_pop(pop,n):
 
 
 
-
-
+    print("Mutaion: ")
 # 3. Mutation Part
     m_r = 0.8   # Mutation Rate 
     choosen_ones = [i for i in range(len(pop_list)//2)] # from only children part
@@ -93,7 +90,7 @@ def init_pop(pop,n):
         # new_value = rnd.randint(1,n)
         new_value = 5
         pop_list[i][new_ch] = new_value
-    return pop_list
+    print(pop_list) 
 
 
 
